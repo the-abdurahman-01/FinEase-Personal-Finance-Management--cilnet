@@ -78,21 +78,21 @@ const MyProfile = () => {
         className={`shadow-xl rounded-2xl p-8 w-full max-w-md border text-center transition-all duration-500 ${
           isDarkMode
             ? "bg-gray-800 border-gray-700 text-gray-100"
-            : "bg-white border-teal-100 text-gray-800"
+            : "bg-white border-yellow-100 text-gray-800"
         }`}
       >
         <img
           src={photo}
           alt="User"
-          className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-2 border-emerald-500"
+          className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-2 border-gray-900"
         />
-        <h2 className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
+        <h2 className="text-2xl font-bold text-emerald-600 dark:text-yellow-400 mb-2">
           {name}
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{user?.email}</p>
         <button
           onClick={() => setShowModal(true)}
-          className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
+          className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
         >
           Update Profile
         </button>
@@ -111,7 +111,7 @@ const MyProfile = () => {
                 : "bg-white border-teal-100 text-gray-800"
             }`}
           >
-            <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4 text-center">
+            <h3 className="text-xl font-bold text-emerald-600 dark:text-yellow-400 mb-4 text-center">
               Update Profile
             </h3>
 
@@ -122,7 +122,7 @@ const MyProfile = () => {
                   alt="Preview"
                   className="w-24 h-24 rounded-full mb-3 border-2 border-emerald-500 object-cover"
                 />
-                <label className="cursor-pointer text-teal-600 dark:text-teal-400 font-medium hover:underline">
+                <label className="cursor-pointer text-teal-600 dark:text-yellow-400 font-medium hover:underline">
                   Change Photo
                   <input
                     type="file"
@@ -142,7 +142,7 @@ const MyProfile = () => {
                   value={photo}
                   onChange={handleUrlChange}
                   placeholder="Enter photo URL"
-                  className={`w-full p-3 rounded-lg outline-none focus:border-emerald-500 transition border ${
+                  className={`w-full p-3 rounded-lg outline-none focus:border-yellow-500 transition border ${
                     isDarkMode
                       ? "bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-800"
@@ -159,7 +159,7 @@ const MyProfile = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className={`w-full p-3 rounded-lg outline-none focus:border-emerald-500 transition border ${
+                  className={`w-full p-3 rounded-lg outline-none focus:border-yellow-500 transition border ${
                     isDarkMode
                       ? "bg-gray-700 border-gray-600 text-gray-100 placeholder-gray-400"
                       : "bg-white border-gray-300 text-gray-800"
@@ -181,7 +181,7 @@ const MyProfile = () => {
                 </button>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
+                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
                 >
                   Save
                 </button>

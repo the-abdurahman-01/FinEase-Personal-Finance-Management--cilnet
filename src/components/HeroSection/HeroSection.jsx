@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-3xl text-center px-6 animate-fadeIn">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
          Finance{" "}
-          <span className="text-yellow-400 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-green-400 animate-textGradient">
+          <span className="text-yellow-500 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-green-400 animate-textGradient">
   Made Easy
           </span>{" "}
           —Dreams Made Possible.

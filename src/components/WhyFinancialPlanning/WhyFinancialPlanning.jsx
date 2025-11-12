@@ -37,7 +37,7 @@ const WhyFinancialPlanning = () => {
       <div className="max-w-[1520px] mx-auto px-8 text-center">
         <h2
           className={`text-4xl font-bold mb-4 ${
-            isDarkMode ? "text-white" : "text-gray-800"
+            isDarkMode ? "text-yellow-500" : "text-gray-800"
           }`}
         >
           Why Financial Planning Matters
@@ -66,12 +66,12 @@ const WhyFinancialPlanning = () => {
               </div>
               <h3
                 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? "text-white" : "text-gray-800"
+                  isDarkMode ? "text-yellow-500" : "text-gray-800"
                 }`}
               >
                 {benefit.title}
               </h3>
-              <p className={`${isDarkMode ? "text-gray-300" : "text-gray-600"}`}>
+              <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                 {benefit.description}
               </p>
             </div>

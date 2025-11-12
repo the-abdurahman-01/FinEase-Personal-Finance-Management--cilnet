@@ -37,14 +37,14 @@ const BudgetingTips = () => {
       <div className="max-w-[1510px] mx-auto px-8 text-center">
         <h2
           className={`text-4xl font-bold mb-4 ${
-            isDarkMode ? "text-gray-100" : "text-gray-800"
+            isDarkMode ? "text-yellow-500" : "text-yellow-900"
           }`}
         >
           Budgeting Tips
         </h2>
         <p
           className={`text-lg mb-12 max-w-2xl mx-auto ${
-            isDarkMode ? "text-gray-400" : "text-gray-600"
+            isDarkMode ? "text-gray-300" : "text-yellow-700"
           }`}
         >
           Smart budgeting empowers you to take control of your finances. Follow
@@ -57,7 +57,7 @@ const BudgetingTips = () => {
             <div
               key={index}
               className={`${
-                isDarkMode ? "bg-gray-800 text-gray-200" : "bg-gray-50 text-gray-800"
+                isDarkMode ? "bg-gray-700 text-yellow-200" : "bg-yellow-50 text-yellow-800"
               } p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 flex flex-col items-center text-center`}
             >
               <div className={`${tip.bgColor} text-white p-5 rounded-full mb-5`}>
@@ -65,7 +65,7 @@ const BudgetingTips = () => {
               </div>
               <h3
                 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? "text-gray-100" : "text-gray-800"
+                  isDarkMode ? "text-yellow-400" : "text-gray-800"
                 }`}
               >
                 {tip.title}
