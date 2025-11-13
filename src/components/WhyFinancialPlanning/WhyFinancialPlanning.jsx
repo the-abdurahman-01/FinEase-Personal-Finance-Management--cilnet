@@ -37,7 +37,7 @@ const WhyFinancialPlanning = () => {
       <div className="max-w-[1520px] mx-auto px-8 text-center">
         <h2
           className={`text-4xl font-bold mb-4 ${
-            isDarkMode ? "text-yellow-500" : "text-gray-800"
+            isDarkMode ? "text-yellow-500" : "text-blue-500"
           }`}
         >
           Why Financial Planning Matters
@@ -58,7 +58,7 @@ const WhyFinancialPlanning = () => {
             <div
               key={index}
               className={`p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 flex flex-col items-center text-center ${
-                isDarkMode ? "bg-gray-800" : "bg-white"
+                isDarkMode ? "bg-gray-700" : "bg-blue-50"
               }`}
             >
               <div className={`${benefit.bgColor} text-white p-5 rounded-full mb-5`}>
@@ -66,7 +66,7 @@ const WhyFinancialPlanning = () => {
               </div>
               <h3
                 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? "text-yellow-500" : "text-gray-800"
+                  isDarkMode ? "text-yellow-500" : "text-blue-500"
                 }`}
               >
                 {benefit.title}

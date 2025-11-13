@@ -16,28 +16,27 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-gradient-to-r from-green-600 to-teal-600 rounded-lg text-white">
-                <MdAccountBalanceWallet className="w-6 h-6" />
+              <div   className={`outline-none   bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}>
+                <MdAccountBalanceWallet className="w-13 h-15" />
               </div>
-              <h2 className="text-xl font-bold text-teal-400">FinanceFlow</h2>
+              <h2  className={`w-full outline-none  bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}>FinanceFlow</h2>
             </div>
             <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-sm leading-relaxed`}>
               Take control of your finances with FinanceFlow — track expenses, set goals, and build your financial freedom confidently.
             </p>
             <div className="flex items-center space-x-4">
-              <a href="https://www.linkedin.com/in/amdadislam01/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors">
-                <FaLinkedinIn className="h-5 w-5" />
-              </a>
-              <a href="https://x.com/amdad_vai__01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <a href="https://x.com/rah_abdur5635" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
                 <RiTwitterXLine className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/amdadislam01/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <a href="https://www.facebook.com/theabdurrahman" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
                 <FaFacebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/a_m_d_a_d__01/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <a href="https://www.instagram.com/its.abdurrahman1/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
                 <FaInstagram className="h-5 w-5" />
               </a>
-              <a href="https://github.com/amdadislam01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition-colors">
+              <a href="https://github.com/the-abdurahman-01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
                 <FaGithub className="h-5 w-5" />
               </a>
             </div>
@@ -46,22 +45,22 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Finance Tools</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Dashboard Overview</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Budget Planner</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Expense Tracker</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Savings Goals</Link></li>
-              <li><Link to="/reports" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Reports & Insights</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Dashboard Overview</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Budget Planner</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Expense Tracker</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Savings Goals</Link></li>
+              <li><Link to="/reports" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Reports & Insights</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h3 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Support</h3>
             <ul className="space-y-2">
-              <li><Link to="/faq" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">FAQs</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Contact Us</Link></li>
-              <li><Link to="/privacy" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Terms & Conditions</Link></li>
-              <li><Link to="/security" className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Security</Link></li>
+              <li><Link to="/faq" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">FAQs</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Contact Us</Link></li>
+              <li><Link to="/privacy" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Terms & Conditions</Link></li>
+              <li><Link to="/security" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Security</Link></li>
             </ul>
           </div>
 
@@ -76,7 +75,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className={`pl-10 pr-3 py-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-200 text-sm placeholder-gray-500 ${
+                  className={`pl-10 pr-3 py-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-200 text-sm placeholder-gray-500 ${
                     isDarkMode
                       ? 'bg-gray-800 border-gray-700 text-gray-100 focus:bg-gray-900'
                       : 'bg-gray-50 border-gray-300 text-gray-800 focus:bg-white'
@@ -85,7 +84,11 @@ const Footer = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white font-medium py-2 px-4 rounded-lg hover:opacity-90 transition duration-300 text-sm"
+                 className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                  isDarkMode
+                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                    : "bg-blue-700 text-white hover:bg-blue-400 hover:text-blue-800"
+                }`}
               >
                 Subscribe
               </button>
@@ -106,20 +109,16 @@ const Footer = () => {
             <div className="text-sm text-gray-400">
               Developed By{" "}
               <a
-                href="https://amdadislam-01.netlify.app/"
+                href="https://the-abdurahman-01.github.io/my-protflio-website/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-400 hover:underline font-medium"
+               className={`w-full outline-none hover:underline  bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}
               >
-                MD Amdad Islam
+                MD Abdur Rahman
               </a>
             </div>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/privacy" className="text-sm text-gray-400 hover:text-teal-400 transition">Privacy Policy</Link>
-              <Link to="/terms" className="text-sm text-gray-400 hover:text-teal-400 transition">Terms of Service</Link>
-              <Link to="/cookies" className="text-sm text-gray-400 hover:text-teal-400 transition">Cookie Policy</Link>
-              <Link to="/accessibility" className="text-sm text-gray-400 hover:text-teal-400 transition">Accessibility</Link>
-            </div>
+          
           </div>
         </div>
       </div>

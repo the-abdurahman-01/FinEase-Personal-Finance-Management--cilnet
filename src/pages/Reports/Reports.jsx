@@ -135,13 +135,13 @@ const Reports = () => {
       className={`min-h-screen w-full transition-colors duration-500 ${
         isDarkMode
           ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100"
-          : "bg-gradient-to-br from-green-50 to-teal-50 text-gray-800"
+          : "bg-gradient-to-br from-blue-50 to-blue-50 text-gray-800"
       }`}
     >
       <div className="p-6 max-w-[1200px] mx-auto">
         <h1
           className={`text-4xl font-extrabold mb-8 text-center ${
-            isDarkMode ? "text-teal-400" : "text-teal-700"
+            isDarkMode ? "text-yellow-400" : "text-blue-700"
           }`}
         >
           Financial Reports
@@ -153,8 +153,8 @@ const Reports = () => {
             onChange={(e) => setFilterMonth(e.target.value)}
             className={`p-3 rounded-lg w-64 font-medium transition cursor-pointer border-2 ${
               isDarkMode
-                ? "bg-gray-800 border-teal-600 text-gray-200 hover:border-teal-400"
-                : "border-teal-400 text-gray-700 hover:border-teal-600"
+                ? "bg-gray-800 border-yellow-600 text-gray-200 hover:border-yellow-400"
+                : "border-blue-400 text-black-600 hover:border-blue-600"
             }`}
           >
             <option value="">All Months</option>
@@ -170,8 +170,8 @@ const Reports = () => {
             onChange={(e) => setFilterCategory(e.target.value)}
             className={`p-3 rounded-lg w-64 font-medium transition cursor-pointer border-2 ${
               isDarkMode
-                ? "bg-gray-800 border-teal-600 text-gray-200 hover:border-teal-400"
-                : "border-teal-400 text-gray-700 hover:border-teal-600"
+                ? "bg-gray-800 border-yellow-600 text-gray-200 hover:border-yellow-400"
+                : "border-blue-400 text-black-700 hover:border-blue-600"
             }`}
           >
             <option value="">All Categories</option>
@@ -188,12 +188,12 @@ const Reports = () => {
             className={`p-6 rounded-xl shadow-xl hover:shadow-2xl transition ${
               isDarkMode
                 ? "bg-gradient-to-br from-gray-800 to-gray-700"
-                : "bg-gradient-to-br from-teal-100 to-green-50"
+                : "bg-gradient-to-br from-blue-100 to-blue-200"
             }`}
           >
             <h2
               className={`text-2xl font-semibold mb-4 ${
-                isDarkMode ? "text-teal-300" : "text-teal-800"
+                isDarkMode ? "text-yellow-400" : "text-blue-600"
               }`}
             >
               Expenses by Category
@@ -215,12 +215,12 @@ const Reports = () => {
             className={`p-6 rounded-xl shadow-xl hover:shadow-2xl transition ${
               isDarkMode
                 ? "bg-gradient-to-br from-gray-800 to-gray-700"
-                : "bg-gradient-to-br from-teal-100 to-green-50"
+                : "bg-gradient-to-br from-blue-100 to-blue-200"
             }`}
           >
             <h2
               className={`text-2xl font-semibold mb-4 ${
-                isDarkMode ? "text-teal-300" : "text-teal-800"
+                isDarkMode ? "text-yellow-400" : "text-blue-600"
               }`}
             >
               Monthly Expenses

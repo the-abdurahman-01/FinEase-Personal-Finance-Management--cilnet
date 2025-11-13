@@ -82,20 +82,20 @@ const AddTransaction = () => {
       className={`min-h-screen py-16 flex items-center transition-all duration-300 ${
         isDarkMode
           ? "bg-gradient-to-br from-gray-900 to-gray-800"
-          : "bg-gradient-to-br from-green-50 to-teal-100"
+          : "bg-gradient-to-br from-blue-50 to-blue-100"
       }`}
     >
       <div
         className={`w-full max-w-3xl mx-auto rounded-2xl shadow-xl p-10 border transition-all duration-300 ${
           isDarkMode
             ? "bg-gray-900 border-gray-700"
-            : "bg-white border-teal-50"
+            : "bg-white border-blue-50"
         }`}
       >
         <div className="text-center mb-10">
           <h2
             className={`text-4xl font-extrabold mb-2 tracking-tight ${
-              isDarkMode ? "text-teal-400" : "text-teal-800"
+              isDarkMode ? "text-yellow-400" : "text-blue-600"
             }`}
           >
             Add New Transaction
@@ -125,7 +125,7 @@ const AddTransaction = () => {
                   setType(e.target.value);
                   setCategory("");
                 }}
-                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-150 ${
+                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-150 ${
                   isDarkMode
                     ? "border border-gray-700 bg-gray-800 text-gray-200"
                     : "border border-gray-300 text-gray-700"
@@ -148,7 +148,7 @@ const AddTransaction = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 required
-                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-150 ${
+                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-150 ${
                   isDarkMode
                     ? "border border-gray-700 bg-gray-800 text-gray-200"
                     : "border border-gray-300 text-gray-700"
@@ -181,7 +181,7 @@ const AddTransaction = () => {
                 onChange={(e) => setAmount(e.target.value)}
                 placeholder="Enter amount"
                 required
-                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-150 ${
+                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-150 ${
                   isDarkMode
                     ? "border border-gray-700 bg-gray-800 text-gray-200"
                     : "border border-gray-300 text-gray-700"
@@ -202,7 +202,7 @@ const AddTransaction = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 required
-                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-150 ${
+                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gary-500 transition-all duration-150 ${
                   isDarkMode
                     ? "border border-gray-700 bg-gray-800 text-gray-200"
                     : "border border-gray-300 text-gray-700"
@@ -224,7 +224,7 @@ const AddTransaction = () => {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Write a short note..."
               rows="3"
-              className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition-all duration-150 ${
+              className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-150 ${
                 isDarkMode
                   ? "border border-gray-700 bg-gray-800 text-gray-200"
                   : "border border-gray-300 text-gray-700"
@@ -278,8 +278,8 @@ const AddTransaction = () => {
               type="submit"
               className={`px-12 py-3 text-white font-semibold rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer ${
                 isDarkMode
-                  ? "bg-gradient-to-r from-teal-500 to-green-600"
-                  : "bg-gradient-to-r from-green-600 to-teal-600"
+                  ? "bg-gradient-to-r from-yellow-500 to-yellow-600"
+                  : "bg-gradient-to-r from-blue-400 to-blue-600"
               }`}
             >
               Add Transaction

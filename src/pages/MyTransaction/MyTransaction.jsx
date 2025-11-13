@@ -142,20 +142,20 @@ const MyTransaction = () => {
       className={`min-h-screen pb-24 transition-colors duration-500 ${
         isDarkMode
           ? "bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100"
-          : "bg-gradient-to-br from-green-50 to-teal-50 text-gray-800"
+          : "bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800"
       }`}
     >
       <div
         className={`py-16 text-center shadow-xl transition-colors duration-500 ${
           isDarkMode
-            ? "bg-gradient-to-r from-green-800 via-teal-700 to-teal-600 text-white"
-            : "bg-gradient-to-r from-green-600 via-teal-500 to-teal-400 text-white"
+            ? "bg-gradient-to-r from-yellow-700 via-yellow-600 to-yellow-700 text-white"
+            : "bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 text-white"
         }`}
       >
         <h1 className="text-5xl font-extrabold tracking-wider drop-shadow-lg">
           My Transactions
         </h1>
-        <p className="mt-3 text-lg text-green-100/90 font-medium">
+        <p className="mt-3 text-lg text-white font-medium">
           Track your income & expenses effortlessly — FinanceFlow.
         </p>
       </div>

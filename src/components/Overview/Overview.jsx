@@ -78,7 +78,7 @@ const Overview = () => {
       <div className="max-w-[1500px] mx-auto py-16 px-6">
         <h1
           className={`text-4xl font-bold mb-8 text-center ${
-            isDarkMode ? "text-yellow-500" : "text-gray-800"
+            isDarkMode ? "text-yellow-500" : "text-blue-500"
           }`}
         >
           Dashboard Overview

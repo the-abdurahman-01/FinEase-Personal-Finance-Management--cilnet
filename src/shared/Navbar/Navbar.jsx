@@ -36,11 +36,11 @@ const Navbar = () => {
   ];
 
   const gradient = isDarkMode
-    ? "bg-gradient-to-r from-green-600 to-teal-600"
-    : "bg-gradient-to-r from-green-600 to-teal-600";
+    ? "bg-gradient-to-r from-yellow-500 to-yellow-600"
+    : "bg-gradient-to-r from-blue-700 to-purple-600 ";
   const textColor = isDarkMode ? "text-gray-200" : "text-gray-800";
-  const hoverBg = isDarkMode ? "hover:bg-gray-800" : "hover:bg-teal-50";
-  const borderColor = isDarkMode ? "border-gray-600" : "border-teal-600";
+  const hoverBg = isDarkMode ? "hover:bg-gray-700" : "hover:bg-blue-50";
+  const borderColor = isDarkMode ? "border-yellow-600" : "border-blue-600";
 
   return (
     <header className={`${isDarkMode ? "bg-gray-900 border-gray-700" : "bg-white border-gray-100"} sticky top-0 z-50 border-b shadow-sm`}>
@@ -50,7 +50,8 @@ const Navbar = () => {
             <MdAccountBalanceWallet className="text-xl" />
           </div>
           <span className={`font-extrabold text-xl ${textColor}`}>
-            Finance<span className="text-teal-500">Flow</span>
+            Fin<span   className={`w-full  ml-1 bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}>Ease</span>
           </span>
         </NavLink>
 
@@ -63,8 +64,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
                   isActive
-                    ? `border ${borderColor} text-teal-500 font-semibold bg-transparent`
-                    : `${textColor} hover:text-teal-500 hover:border ${borderColor} ${hoverBg}`
+                    ? `border ${borderColor} text-yellow-500 font-semibold bg-transparent`
+                    : `${textColor} hover:text-yellow-500 hover:border ${borderColor} ${hoverBg}`
                 }`
               }
             >
@@ -83,7 +84,7 @@ const Navbar = () => {
           </button>
 
           {loading ? (
-            <div className={`w-8 h-8 border-4 border-teal-500 border-t-transparent rounded-full animate-spin`} />
+            <div className={`w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin`} />
           ) : !user ? (
             <>
               <NavLink
@@ -95,9 +96,10 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 to="/signup"
-                className={`px-4 py-2 rounded-md font-medium border ${borderColor} text-teal-500 hover:bg-teal-50 transition`}
+                className={`px-4 py-2 rounded-md font-medium border ${borderColor} text-blue-500 hover:bg-blue-50 transition`}
               >
-                <FaUserPlus className="inline mr-2" />
+                <FaUserPlus  className=  {`w-full bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`} />
                 Signup
               </NavLink>
             </>
@@ -110,7 +112,7 @@ const Navbar = () => {
                 <img
                   src={user?.photoURL || user.reloadUserInfo.photoURL}
                   alt="Profile"
-                  className="w-10 h-10 rounded-full border-2 border-teal-500"
+                  className="w-10 h-10 rounded-full border-2 border-yellow-500"
                 />
               </div>
 
@@ -153,11 +155,13 @@ const Navbar = () => {
                 end
                 className={({ isActive }) =>
                   `flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-all duration-200 ${
-                    isActive
-                      ? `border ${borderColor} text-teal-500 font-semibold bg-transparent`
-                      : `${textColor} hover:text-teal-500 hover:border ${borderColor} ${hoverBg}`
+                    isActive 
+                      ? `border ${borderColor} text-blue-500 font-semibold bg-transparent`
+                      : `${textColor} hover:text-blue-500 hover:border ${borderColor} ${hoverBg}`
                   }`
                 }
+        
+
                 onClick={() => setIsOpen(false)}
               >
                 {link.icon}
@@ -173,12 +177,12 @@ const Navbar = () => {
             </button>
 
             {loading ? (
-              <div className="w-8 h-8 border-4 border-teal-500 border-t-transparent rounded-full animate-spin mx-auto my-2" />
+              <div className="w-8 h-8 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mx-auto my-2" />
             ) : !user ? (
               <>
                 <NavLink
                   to="/login"
-                  className={`${gradient} text-white flex items-center justify-center px-5 py-2 rounded-md font-medium hover:opacity-90 transition cursor-pointer`}
+                  className={`${gradient} text-white flex items-center justify-center px-5 py-2 rounded-md font-medium hover:opacity-90 transition cursor-pointer hover:scale-101`}
                   onClick={() => setIsOpen(false)}
                 >
                   <FaSignInAlt className="inline mr-2" />
@@ -186,10 +190,10 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink
                   to="/signup"
-                  className={`flex items-center justify-center px-5 py-2 rounded-md font-medium border ${borderColor} text-teal-500 hover:bg-teal-50 transition cursor-pointer`}
+                  className={`flex items-center justify-center px-5 py-2 rounded-md font-medium border ${borderColor} text-yellow-500 hover:bg-gray-200  hover:text-black transition cursor-pointer hover:scale-101`}
                   onClick={() => setIsOpen(false)}
                 >
-                  <FaUserPlus className="inline mr-2" />
+                  <FaUserPlus className="inline mr-2 " />
                   Signup
                 </NavLink>
               </>
@@ -198,7 +202,7 @@ const Navbar = () => {
                 <img
                   src={user?.photoURL || user.reloadUserInfo.photoURL}
                   alt="Profile"
-                  className="w-12 h-12 rounded-full border-2 border-teal-500 mb-2"
+                  className="w-12 h-12 rounded-full border-2 border-gray-100 mb-2"
                 />
                 <p className={`font-semibold text-xs text-center ${textColor}`}>
                   {user.displayName || user.reloadUserInfo.displayName}
@@ -211,7 +215,7 @@ const Navbar = () => {
                     logoutUser();
                     setIsOpen(false);
                   }}
-                  className={`${gradient} flex items-center justify-center gap-2 px-4 py-2 rounded-md font-medium text-white hover:opacity-90 transition cursor-pointer w-full cursor-pointer`}
+                  className={`${gradient} flex items-center justify-center gap-2 px-4 py-2 rounded-md font-medium text-white hover:opacity-90 transition cursor-pointer w-full cursor-pointer hover:scale-101`}
                 >
                   <FaSignOutAlt />
                   Logout

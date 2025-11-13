@@ -71,14 +71,14 @@ const MyProfile = () => {
       className={`min-h-screen flex justify-center items-center px-4 py-16 transition-all duration-500 ${
         isDarkMode
           ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
-          : "bg-gradient-to-br from-green-50 to-teal-50"
+          : "bg-gradient-to-br from-blue-50 to-blue-100"
       }`}
     >
       <div
         className={`shadow-xl rounded-2xl p-8 w-full max-w-md border text-center transition-all duration-500 ${
           isDarkMode
             ? "bg-gray-800 border-gray-700 text-gray-100"
-            : "bg-white border-yellow-100 text-gray-800"
+            : "bg-gray border-gray-500 text-gray-800"
         }`}
       >
         <img
@@ -86,13 +86,21 @@ const MyProfile = () => {
           alt="User"
           className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-2 border-gray-900"
         />
-        <h2 className="text-2xl font-bold text-emerald-600 dark:text-yellow-400 mb-2">
+        <h2  className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
+                  isDarkMode
+                    ? " text-yellow-400"
+                    : " text-blue-700 "
+                }`}>
           {name}
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{user?.email}</p>
         <button
           onClick={() => setShowModal(true)}
-          className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
+          c className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                  isDarkMode
+                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                    : "bg-blue-200 text-blue-700 hover:bg-blue-500 hover:text-white"
+                }`}
         >
           Update Profile
         </button>
@@ -108,11 +116,14 @@ const MyProfile = () => {
             className={`rounded-2xl p-6 w-full max-w-md border shadow-2xl transition-all duration-500 ${
               isDarkMode
                 ? "bg-gray-800 border-gray-700 text-gray-100"
-                : "bg-white border-teal-100 text-gray-800"
+                : "bg-white border-blue-100 text-gray-800"
             }`}
           >
-            <h3 className="text-xl font-bold text-emerald-600 dark:text-yellow-400 mb-4 text-center">
-              Update Profile
+            <h3 className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg  font-extrabold text-2xl ${
+                  isDarkMode
+                    ? " text-yellow-400"
+                    : " text-blue-700 "
+                }`}> Update Profile
             </h3>
 
             <form onSubmit={handleUpdate} className="space-y-4">
@@ -120,9 +131,13 @@ const MyProfile = () => {
                 <img
                   src={preview}
                   alt="Preview"
-                  className="w-24 h-24 rounded-full mb-3 border-2 border-emerald-500 object-cover"
+                  className="w-24 h-24 rounded-full mb-3 border-2 border-gray-500 object-cover"
                 />
-                <label className="cursor-pointer text-teal-600 dark:text-yellow-400 font-medium hover:underline">
+                <label className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
+                  isDarkMode
+                    ? " text-yellow-400"
+                    : " text-blue-700 "
+                }`}>
                   Change Photo
                   <input
                     type="file"
@@ -134,7 +149,7 @@ const MyProfile = () => {
               </div>
 
               <div>
-                <label className="block mb-1 font-medium text-gray-600 dark:text-gray-300">
+                <label className="block mb-1 font-medium text-gray-600 dark:text-gray-500">
                   Photo URL
                 </label>
                 <input
@@ -151,7 +166,7 @@ const MyProfile = () => {
               </div>
 
               <div>
-                <label className="block mb-1 font-medium text-gray-600 dark:text-gray-300">
+                <label className="block mb-1 font-medium text-gray-600 dark:text-gray-500">
                   Name
                 </label>
                 <input
@@ -181,7 +196,11 @@ const MyProfile = () => {
                 </button>
                 <button
                   type="submit"
-                  className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-2 rounded-lg font-medium hover:opacity-90 transition cursor-pointer"
+          className={` flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                  isDarkMode
+                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                    : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                }`}
                 >
                   Save
                 </button>

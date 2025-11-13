@@ -101,8 +101,8 @@ const Signup = () => {
         <div
           className={`hidden md:flex flex-col justify-center items-center p-10 space-y-6 transition-all duration-500 ${
             isDarkMode
-              ? "bg-gradient-to-r from-green-700 to-teal-700 text-gray-100"
-              : "bg-gradient-to-r from-green-600 to-teal-600 text-white"
+              ? "bg-gradient-to-r from-yellow-600 to-yellow-600 text-gray-100"
+              : "bg-gradient-to-r from-blue-500 to-blue-700 text-white"
           }`}
         >
           <h2 className="text-4xl font-extrabold">FinanceFlow</h2>
@@ -163,10 +163,12 @@ const Signup = () => {
                 className={`flex items-center rounded-lg p-3 border transition-all duration-300 ${
                   isDarkMode
                     ? "bg-gray-700 border-gray-600"
-                    : "bg-white border-gray-300"
+                    : "bg-white border-gray-900"
                 }`}
               >
-                <FaUser className="text-green-600 mr-3" />
+                <FaUser className={`mr-3 outline-none bg-transparent ${
+                    isDarkMode ? "text-gray-100" : "text-blue-600"
+                  }`} />
                 <input
                   type="text"
                   name="name"
@@ -188,7 +190,9 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaImage className="text-green-600 mr-3" />
+                <FaImage className={`mr-3 outline-none bg-transparent ${
+                    isDarkMode ? "text-gray-100" : "text-blue-600"
+                  }`} /> 
                 <input
                   type="text"
                   name="photo"
@@ -210,7 +214,9 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaEnvelope className="text-green-600 mr-3" />
+                <FaEnvelope  className={`mr-3 outline-none bg-transparent ${
+                    isDarkMode ? "text-gray-100" : "text-blue-600"
+                  }`} />
                 <input
                   type="email"
                   name="email"
@@ -232,7 +238,9 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaLock className="text-green-600 mr-3" />
+                <FaLock className={`mr-3 outline-none bg-transparent ${
+                    isDarkMode ? "text-gray-100" : "text-blue-600"
+                  }`} />
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -251,22 +259,25 @@ const Signup = () => {
                 </button>
               </div>
             </div>
-
-            <button
-              type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-teal-600 text-white py-2.5 rounded-lg font-medium hover:opacity-95 hover:shadow-md transition-all cursor-pointer"
-            >
-              <FaUserPlus /> Sign Up
-            </button>
-
+  <button
+                onClick={handleGoogleLogin}
+                type="button"
+                className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                  isDarkMode
+                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white "
+                    : "bg-blue-500 text-white hover:bg-blue-700"
+                }`}
+              >
+            <FaUserPlus /> Sign Up
+              </button>
             <div className="w-full flex items-center justify-center mt-4">
               <button
                 onClick={handleGoogleLogin}
                 type="button"
                 className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
                   isDarkMode
-                    ? "bg-gray-700 text-green-400 hover:bg-gray-600"
-                    : "bg-green-100 text-green-700 hover:bg-green-200"
+                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                    : "bg-blue-100 text-blue-700 hover:bg-blue-200"
                 }`}
               >
                 <FaGoogle /> Continue with Google
@@ -281,7 +292,8 @@ const Signup = () => {
               Already have an account?{" "}
               <a
                 href="/login"
-                className="text-green-700 dark:text-green-400 font-semibold hover:underline"
+            className={`w-full outline-none hover:underline bg-transparent ${
+                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}
               >
                 Login Now
               </a>
