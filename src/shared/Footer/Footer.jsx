@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { FaFacebook, FaLinkedinIn, FaGithub, FaInstagram } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa'
+import { GiWallet } from "react-icons/gi";
 import { RiTwitterXLine } from "react-icons/ri";
 import { HiOutlineMail } from 'react-icons/hi'
-import { MdAccountBalanceWallet } from 'react-icons/md'
+
 import { useTheme } from '../../context/ThemeContext/ThemeContext'
 
 const Footer = () => {
@@ -18,25 +19,25 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <div   className={`outline-none   bg-transparent ${
                     isDarkMode ? "text-yellow-500" : "text-blue-600"}`}>
-                <MdAccountBalanceWallet className="w-13 h-15" />
+                <GiWallet  className="w-13 h-15" />
               </div>
               <h2  className={`w-full outline-none  bg-transparent ${
                     isDarkMode ? "text-yellow-500" : "text-blue-600"}`}>FinanceFlow</h2>
             </div>
-            <p className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} text-sm leading-relaxed`}>
+            <p className={`${isDarkMode ? 'text-gray-500' : 'text-grgray'} text-sm leading-relaxed`}>
               Take control of your finances with FinanceFlow — track expenses, set goals, and build your financial freedom confidently.
             </p>
             <div className="flex items-center space-x-4">
-              <a href="https://x.com/rah_abdur5635" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
+              <a href="https://x.com/rah_abdur5635" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <RiTwitterXLine className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/theabdurrahman" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
+              <a href="https://www.facebook.com/theabdurrahman" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <FaFacebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/its.abdurrahman1/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
+              <a href="https://www.instagram.com/its.abdurrahman1/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <FaInstagram className="h-5 w-5" />
               </a>
-              <a href="https://github.com/the-abdurahman-01" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-yellow-400 transition-colors">
+              <a href="https://github.com/the-abdurahman-01" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-gray-800 transition-colors">
                 <FaGithub className="h-5 w-5" />
               </a>
             </div>
@@ -45,22 +46,22 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Finance Tools</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Dashboard Overview</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Budget Planner</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Expense Tracker</Link></li>
-              <li><Link to="/" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Savings Goals</Link></li>
-              <li><Link to="/reports" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Reports & Insights</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Dashboard Overview</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Budget Planner</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Expense Tracker</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Savings Goals</Link></li>
+              <li><Link to="/reports" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Reports & Insights</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h3 className={`text-lg font-semibold ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>Support</h3>
             <ul className="space-y-2">
-              <li><Link to="/faq" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">FAQs</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Contact Us</Link></li>
-              <li><Link to="/privacy" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Terms & Conditions</Link></li>
-              <li><Link to="/security" className="text-gray-400 hover:text-yellow-400 transition-colors text-sm">Security</Link></li>
+              <li><Link to="/faq" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">FAQs</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Contact Us</Link></li>
+              <li><Link to="/privacy" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Terms & Conditions</Link></li>
+              <li><Link to="/security" className="text-gray-400 hover:text-gray-800 transition-colors text-sm">Security</Link></li>
             </ul>
           </div>
 
@@ -118,7 +119,12 @@ const Footer = () => {
                 MD Abdur Rahman
               </a>
             </div>
-          
+           <div className="flex flex-wrap gap-4">
+              <Link to="/privacy" className="text-sm text-gray-400 hover:text-gray-800 transition">Privacy Policy</Link>
+              <Link to="/terms" className="text-sm text-gray-400 hover:text-gray-800 transition">Terms of Service</Link>
+              <Link to="/cookies" className="text-sm text-gray-400 hover:text-gray-800 transition">Cookie Policy</Link>
+              <Link to="/accessibility" className="text-sm text-gray-400 hover:text-gray-800 transition">Accessibility</Link>
+            </div>
           </div>
         </div>
       </div>

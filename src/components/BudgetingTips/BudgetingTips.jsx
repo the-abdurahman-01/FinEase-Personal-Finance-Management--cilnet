@@ -1,24 +1,26 @@
 import React from "react";
-import { FaPiggyBank, FaChartLine, FaRegCalendarCheck } from "react-icons/fa";
+import { FaCalendarCheck  } from "react-icons/fa";
+import { GiBank } from "react-icons/gi";
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 
 const tipsData = [
   {
-    icon: <FaPiggyBank size={28} />,
+    icon: <GiBank  size={28} />,
     title: "Track Your Expenses",
     description:
       "Maintain a detailed record of your daily spending to pinpoint opportunities for savings.",
     bgColor: "bg-blue-500",
   },
   {
-    icon: <FaChartLine size={28} />,
+    icon: <FaMoneyBillTrendUp  size={28} />,
     title: "Set Financial Goals",
     description:
       "Establish clear short-term and long-term objectives to direct your budgeting strategies.",
     bgColor: "bg-green-500",
   },
   {
-    icon: <FaRegCalendarCheck size={28} />,
+    icon: <FaCalendarCheck  size={28} />,
     title: "Plan Ahead",
     description:
       "Prepare a monthly budget and allocate funds for necessities, savings, and leisure.",

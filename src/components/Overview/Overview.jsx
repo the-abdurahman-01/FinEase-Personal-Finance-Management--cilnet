@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { FaWallet, FaArrowUp, FaArrowDown } from "react-icons/fa";
+import { GiWallet, GiReceiveMoney, GiPayMoney   } from "react-icons/gi";
 import { AuthContext } from "../../context/AuthContext";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 import { getAuth } from "firebase/auth";
@@ -89,7 +89,7 @@ const Overview = () => {
             className={`${cardBg} shadow-lg rounded-xl p-6 flex items-center gap-6 transform transition hover:scale-105`}
           >
             <div className="p-5 bg-blue-600 text-white rounded-full shadow">
-              <FaWallet size={28} />
+              <GiWallet  size={28} />
             </div>
             <div>
               <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
@@ -103,7 +103,7 @@ const Overview = () => {
             className={`${incomeBg} shadow-lg rounded-xl p-6 flex items-center gap-6 transform transition hover:scale-105`}
           >
             <div className="p-5 bg-green-600 text-white rounded-full shadow">
-              <FaArrowUp size={28} />
+              <GiPayMoney  size={28} />
             </div>
             <div>
               <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
@@ -117,11 +117,11 @@ const Overview = () => {
             className={`${expenseBg} shadow-lg rounded-xl p-6 flex items-center gap-6 transform transition hover:scale-105`}
           >
             <div className="p-5 bg-red-600 text-white rounded-full shadow">
-              <FaArrowDown size={28} />
+              <GiReceiveMoney size={28} />
             </div>
             <div>
               <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
-                Total Expenses
+                Total Outflow
               </p>
               <h2 className="md:text-md lg:text-3xl font-bold">{expense.toFixed(2)}৳</h2>
             </div>

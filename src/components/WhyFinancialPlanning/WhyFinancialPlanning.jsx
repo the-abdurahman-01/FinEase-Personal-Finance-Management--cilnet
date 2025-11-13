@@ -1,24 +1,26 @@
 import React from "react";
-import { FaBullseye, FaBalanceScale, FaShieldAlt } from "react-icons/fa";
+import { FaBalanceScaleRight  } from "react-icons/fa";
+import { IoShieldCheckmark } from "react-icons/io5";
+import { GiStairsGoal } from "react-icons/gi";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 
 const benefits = [
   {
-    icon: <FaBullseye size={28} />,
+    icon: <GiStairsGoal size={28} />,
     title: "Achieve Goals Faster",
     description:
       "Effectively plan your finances to reach short-term and long-term goals efficiently and stress-free.",
     bgColor: "bg-blue-500",
   },
   {
-    icon: <FaBalanceScale size={28} />,
+    icon: <FaBalanceScaleRight  size={28} />,
     title: "Minimize Debt",
     description:
       "Control your spending and reduce unnecessary debt through strategic financial planning.",
     bgColor: "bg-green-500",
   },
   {
-    icon: <FaShieldAlt size={28} />,
+    icon: <IoShieldCheckmark size={28} />,
     title: "Secure Your Future",
     description:
       "Build savings and investments wisely to ensure long-term financial stability and peace of mind.",

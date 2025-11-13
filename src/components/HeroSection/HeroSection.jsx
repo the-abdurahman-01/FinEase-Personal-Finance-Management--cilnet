@@ -1,13 +1,19 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import b from '/b.png'
+import bfg from '/bfg.png'
 import bg from '/bg.png'
+import bgg from '/bgg.png'
+import bgggggg from '/bgggggg.png'
+import bng from '/bng.png'
+
 import { Link } from "react-router";
 
 const HeroSection = () => {
   return (
     <section className="relative h-[85vh] flex items-center justify-center text-white overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center transform scale-110 animate-zoomSlow"
+        className="absolute inset-0 bg-cover bg-center transform scale-110 animate-zoomSlow "
         style={{
           backgroundImage: `url(${bg})`
         }}
@@ -33,7 +39,7 @@ const HeroSection = () => {
             Get Started <FaArrowRight />
           </Link>
 
-          <button className="px-6 py-3 border border-yellow-50 rounded-full text-white font-semibold hover:bg-white hover:text-yellow-500 transition-all duration-300 cursor-pointer">
+          <button className="px-6 py-3 border border-yellow-50 rounded-full text-white font-semibold hover:bg-white hover:text-yellow-500 transition-all duration-300 cursor-pointer ">
             Learn More
           </button>
         </div>

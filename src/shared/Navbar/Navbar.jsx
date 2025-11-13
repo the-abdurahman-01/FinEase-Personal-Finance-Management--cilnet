@@ -2,18 +2,19 @@ import React, { useState, useContext } from "react";
 import { NavLink } from "react-router";
 import {
   FaHome,
-  FaChartPie,
+  FaChartArea ,
   FaPlusCircle,
   FaUserCircle,
-  FaSignInAlt,
+  FaDoorOpen ,
   FaUserPlus,
-  FaSignOutAlt,
-  FaBars,
-  FaTimes,
-  FaSun,
-  FaMoon,
+
+  FaCloudSun ,
+  FaCloudMoon ,
 } from "react-icons/fa";
-import { MdAccountBalanceWallet } from "react-icons/md";
+import { ImExit } from "react-icons/im";
+import { HiBarsArrowDown , HiMiniBarsArrowUp } from "react-icons/hi2";
+import { TbReportSearch } from "react-icons/tb";
+import { GiWallet } from "react-icons/gi";
 import { AuthContext } from "../../context/AuthContext";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 
@@ -28,8 +29,8 @@ const Navbar = () => {
     { to: "/add-transaction", label: "Add Transaction", icon: <FaPlusCircle /> },
     ...(user
       ? [
-          { to: "/my-transactions", label: "My Transactions", icon: <FaChartPie /> },
-          { to: "/reports", label: "Reports", icon: <FaChartPie /> },
+          { to: "/my-transactions", label: "My Transactions", icon: <FaChartArea  /> },
+          { to: "/reports", label: "Reports", icon: <TbReportSearch /> },
           { to: "/profile", label: "My Profile", icon: <FaUserCircle /> },
         ]
       : []),
@@ -47,7 +48,7 @@ const Navbar = () => {
       <nav className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16">
         <NavLink to="/" className="flex items-center gap-2 group">
           <div className={`${gradient} p-2 rounded-lg text-white`}>
-            <MdAccountBalanceWallet className="text-xl" />
+            <GiWallet  className="text-xl" />
           </div>
           <span className={`font-extrabold text-xl ${textColor}`}>
             Fin<span   className={`w-full  ml-1 bg-transparent ${
@@ -80,7 +81,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`${textColor} p-2 rounded-md hover:bg-gray-300 dark:hover:bg-gray-400 transition`}
           >
-            {isDarkMode ? <FaSun /> : <FaMoon />}
+            {isDarkMode ? <FaCloudSun  /> : <FaCloudMoon  />}
           </button>
 
           {loading ? (
@@ -91,7 +92,7 @@ const Navbar = () => {
                 to="/login"
                 className={`${gradient} text-white px-4 py-2 rounded-md font-medium hover:opacity-90 transition`}
               >
-                <FaSignInAlt className="inline mr-2" />
+                <FaDoorOpen  className="inline mr-2" />
                 Login
               </NavLink>
               <NavLink
@@ -128,7 +129,7 @@ const Navbar = () => {
                     onClick={logoutUser}
                     className={`${gradient} text-white w-full py-2 rounded-md font-medium hover:opacity-90 transition cursor-pointer`}
                   >
-                    <FaSignOutAlt className="inline mr-2" />
+                    <ImExit  className="inline mr-2" />
                     Logout
                   </button>
                 </div>
@@ -141,7 +142,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           className={`${textColor} text-2xl lg:hidden focus:outline-none`}
         >
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {isOpen ? <HiMiniBarsArrowUp  /> : <HiBarsArrowDown  />}
         </button>
       </nav>
 
@@ -173,7 +174,7 @@ const Navbar = () => {
               onClick={toggleTheme}
               className={`${textColor} p-2 rounded-md dark:hover:bg-gray-400 transition flex items-center justify-start ml-2.5 cursor-pointer`}
             >
-              {isDarkMode ? <FaSun /> : <FaMoon />}
+              {isDarkMode ? <FaCloudSun   /> : <FaCloudMoon  />}
             </button>
 
             {loading ? (
@@ -185,7 +186,7 @@ const Navbar = () => {
                   className={`${gradient} text-white flex items-center justify-center px-5 py-2 rounded-md font-medium hover:opacity-90 transition cursor-pointer hover:scale-101`}
                   onClick={() => setIsOpen(false)}
                 >
-                  <FaSignInAlt className="inline mr-2" />
+                  <FaDoorOpen  className="inline mr-2" />
                   Login
                 </NavLink>
                 <NavLink
@@ -217,7 +218,7 @@ const Navbar = () => {
                   }}
                   className={`${gradient} flex items-center justify-center gap-2 px-4 py-2 rounded-md font-medium text-white hover:opacity-90 transition cursor-pointer w-full cursor-pointer hover:scale-101`}
                 >
-                  <FaSignOutAlt />
+                  <ImExit  />
                   Logout
                 </button>
               </div>
