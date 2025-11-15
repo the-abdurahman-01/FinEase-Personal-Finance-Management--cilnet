@@ -29,7 +29,7 @@ const MyTransaction = () => {
           setLoading(true);
           const token = await user.getIdToken();
           const res = await fetch(
-            `https://financeflow-tau-eight.vercel.app/addtranstion?email=${user.email}`,
+            `http://localhost:3000/transtionAdded?email=${user.email}`,
             {
               headers: {
                 authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ const MyTransaction = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://financeflow-tau-eight.vercel.app/addtranstion/${_id}`, { method: "DELETE" })
+        fetch(`http://localhost:3000/transtionAdded/${_id}`, { method: "DELETE" })
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -103,7 +103,7 @@ const MyTransaction = () => {
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`https://financeflow-tau-eight.vercel.app/addtranstion/${selectedTransaction._id}`, {
+    fetch(`http://localhost:3000/addtranstion/${selectedTransaction._id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -174,14 +174,14 @@ const MyTransaction = () => {
               <div
                 className={`px-5 py-3 flex justify-between items-center ${
                   isDarkMode
-                    ? "bg-gradient-to-r from-green-700 via-teal-700 to-teal-600"
-                    : "bg-gradient-to-r from-green-400 via-teal-400 to-teal-300"
+                    ? "bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-500"
+                    : "bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400"
                 }`}
               >
                 <span
                   className={`px-4 py-1 text-xs font-semibold rounded-full ${
                     item.type === "Income"
-                      ? "bg-green-200 text-green-800"
+                      ? "bg-gray-300 text-black"
                       : "bg-teal-200 text-red-600"
                   }`}
                 >
@@ -195,7 +195,7 @@ const MyTransaction = () => {
               <div className="p-6">
                 <h3
                   className={`text-2xl font-bold mb-2 ${
-                    isDarkMode ? "text-gray-100" : "text-gray-800"
+                    isDarkMode ? "text-yellow-500" : "text-blue-500"
                   }`}
                 >
                   {item.category}
@@ -220,12 +220,12 @@ const MyTransaction = () => {
                 className={`flex justify-between items-center px-6 py-4 border-t transition-colors duration-300 ${
                   isDarkMode
                     ? "bg-gray-900 border-gray-700"
-                    : "bg-green-50 border-gray-100"
+                    : "bg-blue-50 border-gray-100"
                 }`}
               >
                 <button
                   onClick={() => handleOpenUpdateModal(item)}
-                  className="flex items-center gap-2 text-green-600 hover:text-teal-500 font-semibold text-sm transition cursor-pointer"
+                  className="flex items-center gap-2 text-green-600 hover:text-blue-500 font-semibold text-sm transition cursor-pointer"
                 >
                   <FaEdit /> Update
                 </button>
@@ -237,7 +237,7 @@ const MyTransaction = () => {
                 </button>
                 <button
                   onClick={() => navigate(`/transaction-details/${item._id}`)}
-                  className="flex items-center gap-2 text-teal-700 hover:text-green-600 font-semibold text-sm transition cursor-pointer"
+                  className="flex items-center gap-2 text-blue-700 hover:text-green-600 font-semibold text-sm transition cursor-pointer"
                 >
                   <FaEye /> View
                 </button>
@@ -256,7 +256,7 @@ const MyTransaction = () => {
           </div>
         )}
       </div>
-        
+
       <dialog
         ref={transactionsModal}
         className="modal modal-bottom sm:modal-middle"
@@ -277,7 +277,7 @@ const MyTransaction = () => {
                   name="type"
                   value={formData.type}
                   onChange={handleChange}
-                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                     isDarkMode
                       ? "bg-gray-900 border-gray-700 text-gray-100"
                       : "border-gray-200"
@@ -297,7 +297,7 @@ const MyTransaction = () => {
                   value={formData.category}
                   onChange={handleChange}
                   required
-                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                     isDarkMode
                       ? "bg-gray-900 border-gray-700 text-gray-100"
                       : "border-gray-200"
@@ -312,7 +312,7 @@ const MyTransaction = () => {
                   value={formData.amount}
                   onChange={handleChange}
                   required
-                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                     isDarkMode
                       ? "bg-gray-900 border-gray-700 text-gray-100"
                       : "border-gray-200"
@@ -328,7 +328,7 @@ const MyTransaction = () => {
                   value={formData.description}
                   onChange={handleChange}
                   rows="2"
-                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                     isDarkMode
                       ? "bg-gray-900 border-gray-700 text-gray-100"
                       : "border-gray-200"
@@ -343,7 +343,7 @@ const MyTransaction = () => {
                   value={formData.date}
                   onChange={handleChange}
                   required
-                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 ${
+                  className={`w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 ${
                     isDarkMode
                       ? "bg-gray-900 border-gray-700 text-gray-100"
                       : "border-gray-200"
@@ -354,13 +354,13 @@ const MyTransaction = () => {
                 <button
                   type="button"
                   onClick={() => transactionsModal.current.close()}
-                  className="px-5 py-2 rounded-md border border-green-400 text-green-600 hover:bg-green-50 transition font-medium cursor-pointer"
+                  className="px-5 py-2 rounded-md border border-blue-400 text-blue-600 hover:bg-blue-100 hover:text-black transition font-medium cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-md bg-green-600 text-white hover:bg-green-700 transition font-medium cursor-pointer"
+                  className="px-5 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-700 transition font-medium cursor-pointer"
                 >
                   Save Changes
                 </button>

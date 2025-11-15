@@ -4,37 +4,30 @@ import { FaExclamationTriangle, FaHome, FaArrowLeft } from "react-icons/fa";
 
 const PageNotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-50 flex items-center justify-center px-4">
-      <div className="bg-white rounded-2xl shadow-2xl p-10 max-w-lg w-full text-center border border-yellow-50">
-        <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 p-5 rounded-full inline-block mb-6 shadow-md">
-          <FaExclamationTriangle className="text-white text-5xl" />
-        </div>
-
-        <h1 className="text-8xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-500 mb-2">
-          404
-        </h1>
-        <div className="h-1 w-24 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full mx-auto mb-4"></div>
-        <p className="text-lg sm:text-xl text-gray-700 mb-8">
-          Oops! The page you're looking for might have wandered off.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 w-full">
-          <Link
-            to="/"
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-medium rounded-lg shadow-md hover:opacity-90 hover:scale-105 transition-all duration-300 flex-1"
-          >
-            <FaHome /> Home
-          </Link>
-          <button
-            onClick={() => window.history.back()}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-yellow-50 hover:text-white font-medium rounded-lg shadow-md hover:bg-yellow-500 hover:scale-105 transition-all duration-300 flex-1 cursor-pointer"
-          >
-            <FaArrowLeft /> Go Back
-          </button>
-        </div>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 px-4">
+      <title> Error</title>
+      <h1 className="text-9xl font-extrabold text-blue-600 mb-4 animate-pulse">
+        404
+      </h1>
+      <p className="text-xl text-gray-700 mb-6">
+        Oops! The page you are looking for does not exist.
+      </p>
+      <Link
+        to="/"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-800 transition duration-300 shadow-lg"
+      >
+        Go Back Home
+      </Link>
+      <div className="mt-10">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/564/564619.png"
+          alt="Not Found"
+          className="w-64 h-64 animate-bounce"
+        />
       </div>
     </div>
   );
 };
+
 
 export default PageNotFound;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
-import { GiWallet, GiReceiveMoney, GiPayMoney   } from "react-icons/gi";
+import { GiWallet, GiReceiveMoney, GiPayMoney } from "react-icons/gi";
 import { AuthContext } from "../../context/AuthContext";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 import { getAuth } from "firebase/auth";
@@ -18,10 +18,10 @@ const Overview = () => {
 
       try {
         const auth = getAuth();
-        const token = await auth.currentUser.getIdToken(); 
+        const token = await auth.currentUser.getIdToken();
 
         const res = await axios.get(
-          `https://financeflow-tau-eight.vercel.app/addtranstion?email=${user.email}`,
+          `http://localhost:3000/transtionAdded?email=${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -68,8 +68,11 @@ const Overview = () => {
 
   if (!user) {
     return (
-      <div className={`${isDarkMode ? "bg-gray-900" : "bg-white"}  flex items-center justify-center`}>
-      </div>
+      <div
+        className={`${
+          isDarkMode ? "bg-gray-900" : "bg-white"
+        }  flex items-center justify-center`}
+      ></div>
     );
   }
 
@@ -89,13 +92,19 @@ const Overview = () => {
             className={`${cardBg} shadow-lg rounded-xl p-6 flex items-center gap-6 transform transition hover:scale-105`}
           >
             <div className="p-5 bg-blue-600 text-white rounded-full shadow">
-              <GiWallet  size={28} />
+              <GiWallet size={28} />
             </div>
             <div>
-              <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
+              <p
+                className={`${
+                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                } font-medium`}
+              >
                 Total Balance
               </p>
-              <h2 className="md:text-md lg:text-3xl font-bold">{balance.toFixed(2)}৳</h2>
+              <h2 className="md:text-md lg:text-3xl font-bold">
+                {balance.toFixed(2)}৳
+              </h2>
             </div>
           </div>
 
@@ -103,13 +112,19 @@ const Overview = () => {
             className={`${incomeBg} shadow-lg rounded-xl p-6 flex items-center gap-6 transform transition hover:scale-105`}
           >
             <div className="p-5 bg-green-600 text-white rounded-full shadow">
-              <GiPayMoney  size={28} />
+              <GiPayMoney size={28} />
             </div>
             <div>
-              <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
+              <p
+                className={`${
+                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                } font-medium`}
+              >
                 Total Income
               </p>
-              <h2 className="md:text-md lg:text-3xl font-bold">{income.toFixed(2)}৳</h2>
+              <h2 className="md:text-md lg:text-3xl font-bold">
+                {income.toFixed(2)}৳
+              </h2>
             </div>
           </div>
 
@@ -120,10 +135,16 @@ const Overview = () => {
               <GiReceiveMoney size={28} />
             </div>
             <div>
-              <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} font-medium`}>
+              <p
+                className={`${
+                  isDarkMode ? "text-gray-300" : "text-gray-700"
+                } font-medium`}
+              >
                 Total Outflow
               </p>
-              <h2 className="md:text-md lg:text-3xl font-bold">{expense.toFixed(2)}৳</h2>
+              <h2 className="md:text-md lg:text-3xl font-bold">
+                {expense.toFixed(2)}৳
+              </h2>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@ const Login = () => {
           image: result.user.photoURL,
         };
 
-        fetch("https://financeflow-tau-eight.vercel.app/users", {
+        fetch("http://localhost:3000/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUsers),
@@ -108,9 +108,11 @@ const Login = () => {
                     : "border-gray-300 bg-white"
                 }`}
               >
-                <FaEnvelope className={`mr-3 outline-none bg-transparent ${
+                <FaEnvelope
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} />
+                  }`}
+                />
                 <input
                   type="email"
                   name="email"
@@ -140,9 +142,11 @@ const Login = () => {
                     : "border-gray-300 bg-white"
                 }`}
               >
-                <FaLock className={`mr-3 outline-none bg-transparent ${
+                <FaLock
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} />
+                  }`}
+                />
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -168,19 +172,20 @@ const Login = () => {
               onClick={() =>
                 navigate("/forget-password", { state: { email: emailInput } })
               }
-                  className={`text-right text-sm w-full outline-none hover:underline bg-transparent ${
-                    isDarkMode ? "text-gray-100" : "text-blue-600"}`}
+              className={`text-right text-sm w-full outline-none hover:underline bg-transparent ${
+                isDarkMode ? "text-gray-100" : "text-blue-600"
+              }`}
             >
               Forgot Password?
             </p>
 
             <button
               type="submit"
-             className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
-                  isDarkMode
-                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
-                    : "bg-blue-500 text-white hover:bg-blue-700"
-                }`}
+              className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                isDarkMode
+                  ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                  : "bg-blue-500 text-white hover:bg-blue-700"
+              }`}
             >
               <FaSignInAlt /> Login
             </button>
@@ -207,8 +212,9 @@ const Login = () => {
               Don’t have an account?{" "}
               <a
                 href="/signup"
-                   className={`w-full outline-none hover:underline bg-transparent ${
-                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}
+                className={`w-full outline-none hover:underline bg-transparent ${
+                  isDarkMode ? "text-yellow-500" : "text-blue-600"
+                }`}
               >
                 Sign up now
               </a>
@@ -216,11 +222,13 @@ const Login = () => {
           </form>
         </div>
 
-        <div className= {`hidden md:flex flex-col justify-center items-center p-10 space-y-6 transition-all duration-500 ${
+        <div
+          className={`hidden md:flex flex-col justify-center items-center p-10 space-y-6 transition-all duration-500 ${
             isDarkMode
               ? "bg-gradient-to-r from-yellow-600 to-yellow-600 text-gray-100"
               : "bg-gradient-to-r from-blue-600 to-blue-800 text-white"
-          }`}>
+          }`}
+        >
           <h2 className="text-4xl font-extrabold">FinanceFlow</h2>
           <p className="text-center text-lg text-teal-50 leading-relaxed max-w-md">
             Track your income, manage expenses, and take control of your

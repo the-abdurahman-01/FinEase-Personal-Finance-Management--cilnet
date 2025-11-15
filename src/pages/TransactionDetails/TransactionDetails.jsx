@@ -1,13 +1,18 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useLoaderData } from "react-router";
 import axios from "axios";
-import { FaArrowLeft, FaMoneyBillWave, FaRegCalendarAlt, FaTag } from "react-icons/fa";
+import {
+  FaArrowLeft,
+  FaMoneyBillWave,
+  FaRegCalendarAlt,
+  FaTag,
+} from "react-icons/fa";
 import { useTheme } from "../../context/ThemeContext/ThemeContext";
 import { AuthContext } from "../../context/AuthContext";
 
 const TransactionDetails = () => {
-  const { user } = useContext(AuthContext); 
-   const transaction = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const transaction = useLoaderData();
   const { isDarkMode } = useTheme();
   const [categoryTotal, setCategoryTotal] = useState(0);
 
@@ -18,7 +23,7 @@ const TransactionDetails = () => {
       try {
         const token = await user.getIdToken();
         const res = await axios.get(
-          `https://financeflow-tau-eight.vercel.app/category-total?email=${user.email}&category=${transaction.category}`,
+          `http://localhost:3000/category-total?email=${user.email}&category=${transaction.category}`,
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -52,8 +57,8 @@ const TransactionDetails = () => {
         <div
           className={`px-10 py-8 ${
             isDarkMode
-              ? "bg-gradient-to-r from-green-700 via-teal-600 to-teal-500"
-              : "bg-gradient-to-r from-green-600 via-teal-500 to-teal-400"
+              ? "bg-gradient-to-r from-yellow-600 via-yellow-600 to-yellow-500"
+              : "bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400"
           }`}
         >
           <h1 className="text-4xl font-extrabold text-white tracking-wide mb-1">
@@ -68,15 +73,15 @@ const TransactionDetails = () => {
           <div className="flex justify-between items-center">
             <h2
               className={`text-2xl font-bold flex items-center gap-2 ${
-                isDarkMode ? "text-gray-100" : "text-gray-800"
+                isDarkMode ? "text-gray-100" : "text-gray-700"
               }`}
             >
-              <FaTag className="text-teal-500" /> {transaction.category}
+              <FaTag className=" text-gray-300" /> {transaction.category}
             </h2>
             <span
               className={`px-4 py-1 rounded-full text-sm font-semibold ${
                 transaction.type === "Income"
-                  ? "bg-green-100 text-green-700"
+                  ? "bg-gray-100 text-black-700"
                   : "bg-red-100 text-red-700"
               }`}
             >
@@ -87,7 +92,9 @@ const TransactionDetails = () => {
           <div className="text-center space-y-2">
             <p
               className={`text-5xl font-extrabold flex justify-center items-center gap-2 ${
-                transaction.type === "Income" ? "text-green-500" : "text-red-500"
+                transaction.type === "Income"
+                  ? "text-green-500"
+                  : "text-red-500"
               }`}
             >
               <FaMoneyBillWave /> ৳{categoryTotal}
@@ -107,7 +114,7 @@ const TransactionDetails = () => {
               className={`rounded-xl p-6 shadow-sm border transition-all duration-500 ${
                 isDarkMode
                   ? "bg-gray-700 border-gray-600"
-                  : "bg-gray-50 border-gray-100"
+                  : "bg-blue-50 border-gray-100"
               }`}
             >
               <h3
@@ -179,12 +186,14 @@ const TransactionDetails = () => {
           className={`px-8 py-6 flex justify-center transition-all duration-500 ${
             isDarkMode
               ? "bg-gradient-to-r from-gray-700 to-gray-800"
-              : "bg-gradient-to-r from-green-100 to-teal-100"
+              : "bg-gradient-to-r from-blue-100 to-blue-50"
           }`}
         >
           <button
             onClick={() => window.history.back()}
-            className="px-8 py-3 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer"
+             className={`text-3xl font-bold mb-2 text-center ${
+              isDarkMode ? "text-white px-5 py-3 bg-yellow-600 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer" : "text-blue-600 px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            }`}
           >
             <FaArrowLeft /> Back to Transactions
           </button>

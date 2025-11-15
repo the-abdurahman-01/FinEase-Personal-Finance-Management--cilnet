@@ -38,7 +38,7 @@ const MyProfile = () => {
     e.preventDefault();
     try {
       await updateUserProfile(name, photo);
-      const res = await fetch(`https://financeflow-tau-eight.vercel.app/users/${user.email}`, {
+      const res = await fetch(`http://localhost:3000/users/${user.email}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -86,21 +86,22 @@ const MyProfile = () => {
           alt="User"
           className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-2 border-gray-900"
         />
-        <h2  className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
-                  isDarkMode
-                    ? " text-yellow-400"
-                    : " text-blue-700 "
-                }`}>
+        <h2
+          className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
+            isDarkMode ? " text-yellow-400" : " text-blue-700 "
+          }`}
+        >
           {name}
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">{user?.email}</p>
         <button
           onClick={() => setShowModal(true)}
-          c className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
-                  isDarkMode
-                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
-                    : "bg-blue-200 text-blue-700 hover:bg-blue-500 hover:text-white"
-                }`}
+          c
+          className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+            isDarkMode
+              ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+              : "bg-blue-200 text-blue-700 hover:bg-blue-500 hover:text-white"
+          }`}
         >
           Update Profile
         </button>
@@ -119,11 +120,13 @@ const MyProfile = () => {
                 : "bg-white border-blue-100 text-gray-800"
             }`}
           >
-            <h3 className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg  font-extrabold text-2xl ${
-                  isDarkMode
-                    ? " text-yellow-400"
-                    : " text-blue-700 "
-                }`}> Update Profile
+            <h3
+              className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg  font-extrabold text-2xl ${
+                isDarkMode ? " text-yellow-400" : " text-blue-700 "
+              }`}
+            >
+              {" "}
+              Update Profile
             </h3>
 
             <form onSubmit={handleUpdate} className="space-y-4">
@@ -133,11 +136,11 @@ const MyProfile = () => {
                   alt="Preview"
                   className="w-24 h-24 rounded-full mb-3 border-2 border-gray-500 object-cover"
                 />
-                <label className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
-                  isDarkMode
-                    ? " text-yellow-400"
-                    : " text-blue-700 "
-                }`}>
+                <label
+                  className={`items-center justify-center gap-2 px-4 py-2 rounded-lg  font-bold ${
+                    isDarkMode ? " text-yellow-400" : " text-blue-700 "
+                  }`}
+                >
                   Change Photo
                   <input
                     type="file"
@@ -196,11 +199,11 @@ const MyProfile = () => {
                 </button>
                 <button
                   type="submit"
-          className={` flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
-                  isDarkMode
-                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
-                    : "bg-blue-100 text-blue-700 hover:bg-blue-200"
-                }`}
+                  className={` flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                    isDarkMode
+                      ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white"
+                      : "bg-blue-100 text-blue-700 hover:bg-blue-200"
+                  }`}
                 >
                   Save
                 </button>

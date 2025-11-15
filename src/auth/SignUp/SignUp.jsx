@@ -66,7 +66,7 @@ const Signup = () => {
           image: result.user.photoURL,
         };
 
-        fetch("https://financeflow-tau-eight.vercel.app/users", {
+        fetch("http://localhost:3000/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -166,9 +166,11 @@ const Signup = () => {
                     : "bg-white border-gray-900"
                 }`}
               >
-                <FaUser className={`mr-3 outline-none bg-transparent ${
+                <FaUser
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} />
+                  }`}
+                />
                 <input
                   type="text"
                   name="name"
@@ -190,9 +192,11 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaImage className={`mr-3 outline-none bg-transparent ${
+                <FaImage
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} /> 
+                  }`}
+                />
                 <input
                   type="text"
                   name="photo"
@@ -214,9 +218,11 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaEnvelope  className={`mr-3 outline-none bg-transparent ${
+                <FaEnvelope
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} />
+                  }`}
+                />
                 <input
                   type="email"
                   name="email"
@@ -238,9 +244,11 @@ const Signup = () => {
                     : "bg-white border-gray-300"
                 }`}
               >
-                <FaLock className={`mr-3 outline-none bg-transparent ${
+                <FaLock
+                  className={`mr-3 outline-none bg-transparent ${
                     isDarkMode ? "text-gray-100" : "text-blue-600"
-                  }`} />
+                  }`}
+                />
                 <input
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -259,17 +267,17 @@ const Signup = () => {
                 </button>
               </div>
             </div>
-  <button
-                onClick={handleGoogleLogin}
-                type="button"
-                className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
-                  isDarkMode
-                    ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white "
-                    : "bg-blue-500 text-white hover:bg-blue-700"
-                }`}
-              >
-            <FaUserPlus /> Sign Up
-              </button>
+            <button
+              onClick={handleGoogleLogin}
+              type="button"
+              className={`w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition cursor-pointer ${
+                isDarkMode
+                  ? "bg-gray-700 text-yellow-400 hover:bg-yellow-600 hover:text-white "
+                  : "bg-blue-500 text-white hover:bg-blue-700"
+              }`}
+            >
+              <FaUserPlus /> Sign Up
+            </button>
             <div className="w-full flex items-center justify-center mt-4">
               <button
                 onClick={handleGoogleLogin}
@@ -292,8 +300,9 @@ const Signup = () => {
               Already have an account?{" "}
               <a
                 href="/login"
-            className={`w-full outline-none hover:underline bg-transparent ${
-                    isDarkMode ? "text-yellow-500" : "text-blue-600"}`}
+                className={`w-full outline-none hover:underline bg-transparent ${
+                  isDarkMode ? "text-yellow-500" : "text-blue-600"
+                }`}
               >
                 Login Now
               </a>

@@ -73,9 +73,7 @@ export const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://financeflow-tau-eight.vercel.app/addtranstion/${params.id}`
-          ),
+          fetch(`http://localhost:3000/transtionAdded/${params.id}`),
       },
     ],
   },

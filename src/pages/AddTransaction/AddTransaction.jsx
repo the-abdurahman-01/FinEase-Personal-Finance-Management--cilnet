@@ -42,14 +42,14 @@ const AddTransaction = () => {
     };
 
     try {
-      const res = await fetch("https://financeflow-tau-eight.vercel.app/addtranstion", {
+      const res = await fetch("http://localhost:3000/transtionAdded", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newTransaction),
       });
 
       const data = await res.json();
-
+// console.log(data)
       if (data.insertedId) {
         Swal.fire({
           icon: "success",
@@ -68,7 +68,9 @@ const AddTransaction = () => {
           text: "Something went wrong. Please try again.",
         });
       }
-    } catch {
+    } catch (error){
+      // console.log(error);
+      
       Swal.fire({
         icon: "error",
         title: "Network Error",
@@ -202,7 +204,7 @@ const AddTransaction = () => {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 required
-                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gary-500 transition-all duration-150 ${
+                className={`w-full rounded-lg p-3 outline-none focus:ring-2 focus:ring-gary-500  transition-all duration-150 ${
                   isDarkMode
                     ? "border border-gray-700 bg-gray-800 text-gray-200"
                     : "border border-gray-300 text-gray-700"

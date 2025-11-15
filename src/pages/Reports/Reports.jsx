@@ -37,7 +37,7 @@ const Reports = () => {
         const auth = getAuth();
         const token = await auth.currentUser.getIdToken();
         const res = await axios.get(
-          `https://financeflow-tau-eight.vercel.app/addtranstion?email=${user.email}`,
+          `http://localhost:3000/transtionAdded?email=${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ const Reports = () => {
         data: Object.values(categoryData),
         backgroundColor: [
           "#1abc9c",
-          "#16a085",
+          "#162ba0ff",
           "#2ecc71",
           "#27ae60",
           "#3498db",
