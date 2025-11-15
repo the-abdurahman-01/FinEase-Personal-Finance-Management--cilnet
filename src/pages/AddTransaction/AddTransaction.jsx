@@ -42,14 +42,17 @@ const AddTransaction = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/transtionAdded", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newTransaction),
-      });
+      const res = await fetch(
+        "https://personal-finance-management-server-g8bc0yuye.vercel.app/transtionAdded",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newTransaction),
+        }
+      );
 
       const data = await res.json();
-// console.log(data)
+      // console.log(data)
       if (data.insertedId) {
         Swal.fire({
           icon: "success",
@@ -68,9 +71,9 @@ const AddTransaction = () => {
           text: "Something went wrong. Please try again.",
         });
       }
-    } catch (error){
+    } catch (error) {
       // console.log(error);
-      
+
       Swal.fire({
         icon: "error",
         title: "Network Error",
@@ -89,9 +92,7 @@ const AddTransaction = () => {
     >
       <div
         className={`w-full max-w-3xl mx-auto rounded-2xl shadow-xl p-10 border transition-all duration-300 ${
-          isDarkMode
-            ? "bg-gray-900 border-gray-700"
-            : "bg-white border-blue-50"
+          isDarkMode ? "bg-gray-900 border-gray-700" : "bg-white border-blue-50"
         }`}
       >
         <div className="text-center mb-10">

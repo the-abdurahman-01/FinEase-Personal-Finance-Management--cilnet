@@ -49,11 +49,14 @@ const Login = () => {
           image: result.user.photoURL,
         };
 
-        fetch("http://localhost:3000/users", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify(newUsers),
-        })
+        fetch(
+          "https://personal-finance-management-server-g8bc0yuye.vercel.app/users",
+          {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(newUsers),
+          }
+        )
           .then((res) => res.json())
           .then(() => {
             toast.success("Login successful!");

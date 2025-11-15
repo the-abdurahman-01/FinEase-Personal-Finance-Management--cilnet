@@ -8,7 +8,7 @@ Developed using **React, Tailwind CSS, Firebase, Express.js, and MongoDB**, it p
 ## 🔗 Live Links
 
 🌐 **Client:** [FinanceFlow Client Site](https://financeflow-client-site.vercel.app/)  
-⚙️ **Server:** [FinanceFlow Server Site](http://localhost:3000/)
+⚙️ **Server:** [FinanceFlow Server Site](https://personal-finance-management-server-g8bc0yuye.vercel.app/)
 
 ---
 

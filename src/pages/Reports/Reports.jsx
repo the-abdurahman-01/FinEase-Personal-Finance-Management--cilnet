@@ -37,7 +37,7 @@ const Reports = () => {
         const auth = getAuth();
         const token = await auth.currentUser.getIdToken();
         const res = await axios.get(
-          `http://localhost:3000/transtionAdded?email=${user.email}`,
+          `https://personal-finance-management-server-g8bc0yuye.vercel.app/transtionAdded?email=${user.email}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

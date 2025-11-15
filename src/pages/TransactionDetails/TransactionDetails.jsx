@@ -23,7 +23,7 @@ const TransactionDetails = () => {
       try {
         const token = await user.getIdToken();
         const res = await axios.get(
-          `http://localhost:3000/category-total?email=${user.email}&category=${transaction.category}`,
+          `https://personal-finance-management-server-g8bc0yuye.vercel.app/category-total?email=${user.email}&category=${transaction.category}`,
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -191,8 +191,10 @@ const TransactionDetails = () => {
         >
           <button
             onClick={() => window.history.back()}
-             className={`text-3xl font-bold mb-2 text-center ${
-              isDarkMode ? "text-white px-5 py-3 bg-yellow-600 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer" : "text-blue-600 px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            className={`text-3xl font-bold mb-2 text-center ${
+              isDarkMode
+                ? "text-white px-5 py-3 bg-yellow-600 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                : "text-blue-600 px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-full font-semibold text-sm hover:scale-105 transform transition-all duration-300 flex items-center gap-2 cursor-pointer"
             }`}
           >
             <FaArrowLeft /> Back to Transactions

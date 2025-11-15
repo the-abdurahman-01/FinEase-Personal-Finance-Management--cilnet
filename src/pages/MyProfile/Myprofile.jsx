@@ -38,16 +38,19 @@ const MyProfile = () => {
     e.preventDefault();
     try {
       await updateUserProfile(name, photo);
-      const res = await fetch(`http://localhost:3000/users/${user.email}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          photo: photo,
-        }),
-      });
+      const res = await fetch(
+        `https://personal-finance-management-server-g8bc0yuye.vercel.app/users/${user.email}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+            photo: photo,
+          }),
+        }
+      );
 
       const data = await res.json();
       if (res.ok) {

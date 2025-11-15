@@ -73,7 +73,9 @@ export const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/transtionAdded/${params.id}`),
+          fetch(
+            `https://personal-finance-management-server-g8bc0yuye.vercel.app/transtionAdded/${params.id}`
+          ),
       },
     ],
   },

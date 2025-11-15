@@ -29,7 +29,7 @@ const MyTransaction = () => {
           setLoading(true);
           const token = await user.getIdToken();
           const res = await fetch(
-            `http://localhost:3000/transtionAdded?email=${user.email}`,
+            `https://personal-finance-management-server-g8bc0yuye.vercel.app/transtionAdded?email=${user.email}`,
             {
               headers: {
                 authorization: `Bearer ${token}`,
@@ -64,7 +64,10 @@ const MyTransaction = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/transtionAdded/${_id}`, { method: "DELETE" })
+        fetch(
+          `https://personal-finance-management-server-g8bc0yuye.vercel.app/transtionAdded/${_id}`,
+          { method: "DELETE" }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
@@ -103,11 +106,14 @@ const MyTransaction = () => {
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:3000/addtranstion/${selectedTransaction._id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
+    fetch(
+      `https://personal-finance-management-server-g8bc0yuye.vercel.app/addtranstion/${selectedTransaction._id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
