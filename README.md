@@ -153,7 +153,7 @@ FinanceFlow supports **Dark and Light themes** with one-click toggle, powered by
 
 ## 📧 Contact
 
-**👤 Author:** [MD. Amdad Islam](https://github.com/the-abdurahman-01)  
+**👤 Author:** [MD. Abdur Rahman](https://github.com/the-abdurahman-01)  
 📍 Dhaka, Bangladesh  
 📩 Email: the.abdurrahman01@gmail.com  
 
