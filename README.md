@@ -3,21 +3,7 @@
 **FinanceFlow** is a modern, full-stack **Personal Finance Management Web Application** built to help users track income, expenses, and budgets efficiently.  
 Developed using **React, Tailwind CSS, Firebase, Express.js, and MongoDB**, it provides real-time tracking, secure authentication, and a clean UI for an enhanced user experience.
 
----
-
-## 🔗 Live Links
-
-🌐 **Client:** [FinanceFlow Client Site](https://financeflow-client-site.vercel.app/)  
-⚙️ **Server:** [FinanceFlow Server Site](https://personal-finance-management-server-g8bc0yuye.vercel.app/)
-
----
-
-## 🔗 GitHub Links
-
-🌐 **Client Code :** [FinanceFlow Client Site](https://github.com/amdadislam01/financeflow-client-site)  
-⚙️ **Server Code :** [FinanceFlow Server Site](https://github.com/amdadislam01/financeflow-server-site)
-
----
+--
 
 ## 🧠 Overview
 
@@ -139,7 +125,7 @@ npm run start
 
 ## Firebase Setup (Admin SDK)
 
-1. Go to [Firebase Console](https://console.firebase.google.com/)
+1.go t console
 2. Create a new project → Add Web App
 3. Get config and paste it into your `.env`
 4. Create a **serviceAccountKey.json** from Firebase Admin SDK
@@ -167,7 +153,7 @@ FinanceFlow supports **Dark and Light themes** with one-click toggle, powered by
 
 ## 📧 Contact
 
-**👤 Author:** [MD. Amdad Islam](https://github.com/amdadislam01)  
+**👤 Author:** [MD. Amdad Islam](https://github.com/the-abdurahman-01)  
 📍 Dhaka, Bangladesh  
-📩 Email: amdad20063@gmail.com  
-🌐 Portfolio: [portfolio](https://amdadislam-01.netlify.app/)
+📩 Email: the.abdurrahman01@gmail.com  
+
